@@ -1,8 +1,80 @@
 import styled from "styled-components";
 
-const Services = () => {
-    return ( <Wrapper id="services"></Wrapper> );
-}
- 
-const Wrapper = styled.div``;
+import { Text } from "../contexts/LanguageContext";
+
+const Services = ({ opacity }) => {
+  const serviceTextGenerator = (start, end) => {
+    const products = [];
+
+    for (let i = start; i < end + 1; i++) {
+      products.push(
+        <p>
+          <Text tid={`productType${i}`} />
+        </p>
+      );
+    }
+
+    return products;
+  };
+
+  return (
+    <Wrapper id="services" opacity={opacity}>
+      <Title>Care & Services</Title>
+      <Content>
+        <Block>
+          <Image src="/assets/services/productType1.jpg" />
+          {serviceTextGenerator(1, 4)}
+        </Block>
+        <Block>
+          <Image src="/assets/services/productType2.jpg" />
+          {serviceTextGenerator(5, 7)}
+        </Block>
+        <Block>
+          <Image src="/assets/services/productType3.jpg" />
+          {serviceTextGenerator(8, 12)}
+        </Block>
+      </Content>
+    </Wrapper>
+  );
+};
+
+const Wrapper = styled.div`
+  margin: 0 10% 5% 10%;
+  padding-top: 50px;
+  border-top: 1px solid var(--eerie-black);
+  opacity: ${(props) => props.opacity};
+  transition: opacity 0.2s ease-in-out;
+
+  animation: ${(props) => props.opacity && "slideUp"} 1s;
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(800px);
+      opacity: 0;
+    }
+  }
+`;
+const Title = styled.h2`
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+`;
+const Content = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+const Block = styled.div`
+  width: 30%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  p {
+    margin-bottom: 5px;
+  }
+`;
+const Image = styled.img`
+  margin-bottom: 10%;
+`;
 export default Services;

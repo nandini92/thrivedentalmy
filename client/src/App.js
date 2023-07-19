@@ -37,14 +37,14 @@ function App() {
           <>
             <Home />
             <About opacity={scrollPercentage > 15 ? 1 : 0} />
-            <Services opacity={scrollPercentage > 25 ? 1 : 0} />
+            <Services opacity={scrollPercentage > 45 ? 1 : 0} />
             <Contact opacity={scrollPercentage > 80 ? 1 : 0} />
           </>
         ) : (
           <>
             <Home />
             <About opacity={scrollPercentage > 10 ? 1 : 0} />
-            <Services opacity={scrollPercentage > 25 ? 1 : 0} />
+            <Services opacity={scrollPercentage > 35 ? 1 : 0} />
             <Contact opacity={scrollPercentage > 90 ? 1 : 0} />
           </>
         )}
