@@ -47,7 +47,7 @@ const Header = ({ scrollPercentage }) => {
         ) : (
           <Cross onClick={() => setRollDown(false)} />
         )}
-        <LanguageSelector />
+        {/* <LanguageSelector /> */}
       </Content>
       <Menu rollDown={rollDown} setRollDown={setRollDown} />
       <ScrollTracker style={{ width: `${scrollPercentage}%` }}></ScrollTracker>

@@ -8,6 +8,7 @@ const About = ({ opacity }) => {
   return (
     <Wrapper id="about-us" opacity={opacity}>
       <Separator opacity={opacity} />
+      <Title>Our Clinic</Title>
       <Content>
         <Founder>
           <Avatar src="/assets/MeeraAsokan.jpg" alt="Founder" />
@@ -52,6 +53,13 @@ const Separator = styled.div`
     }
   }
 `;
+const Title = styled.h2`
+  padding: 50px;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+`;
 const Founder = styled.div`
   width: 60%;
   padding: 0px 20px;
@@ -85,7 +93,7 @@ const Avatar = styled.img`
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 80px 80px 0px;
+  padding: 0px 80px;
 
   @media (width < 1000px) {
     display: block;

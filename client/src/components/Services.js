@@ -40,7 +40,6 @@ const Services = ({ opacity }) => {
 
 const Wrapper = styled.div`
   margin: 0 10% 5% 10%;
-  padding-top: 50px;
   border-top: 1px solid var(--eerie-black);
   opacity: ${(props) => props.opacity};
   transition: opacity 0.2s ease-in-out;
@@ -55,8 +54,9 @@ const Wrapper = styled.div`
   }
 `;
 const Title = styled.h2`
+  padding: 50px;
   font-size: 36px;
-  margin-bottom: 20px;
+  font-weight: 600;
   text-align: center;
 `;
 const Content = styled.div`

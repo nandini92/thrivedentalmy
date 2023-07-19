@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { useRef, useContext } from "react";
+import { useContext } from "react";
 import { BsFacebook } from "react-icons/bs";
-import { IoMdMail } from "react-icons/io";
-import { IoCall } from "react-icons/io5";
+import { IoMdMail  } from "react-icons/io";
+import { IoCall, IoLocation } from "react-icons/io5";
+import { RiInstagramFill } from "react-icons/ri";
 
 import { Text, LanguageContext } from "../contexts/LanguageContext";
 
@@ -12,25 +12,61 @@ const Contact = ({ opacity }) => {
 
   return (
     <Wrapper id="contact" opacity={opacity}>
-      <Title><Text tid="option4" /></Title>
-      <Container>
-          <Info href="mailto:thrivedentalmy@gmail.com"><Mail />thrivedentalmy@gmail.com</Info>
-          <Info href="tel:+60 10-234 1229"><Call />(010) 234-1229</Info>
-          <Info href="https://www.facebook.com/thrivedentalmy/about" target="_blank">
-            <Facebook />
+      <Title>
+        <Text tid="ContactTitle" />
+      </Title>
+        <Card>
+          <Info href="mailto:thrivedentalmy@gmail.com">
+            <Mail />
+            <div>
+              <p style={{fontWeight: 600}}>thrivedentalmy@gmail.com</p>
+              <p>Send us an email</p>
+            </div>
           </Info>
-      </Container>
+          <Info href="tel:+60 10-234 1229">
+            <Call />
+            <div>
+              <p style={{fontWeight: 600}}>+60 10-234 1229</p>
+              <p>Book an appointment</p>
+            </div>
+          </Info>
+          <Info >
+            <Pin />
+            <div>
+              <p style={{fontWeight: 600}}>Block C-GF-13, Damansara Intan,</p>
+              <p>47400, Petaling Jaya</p>
+            </div>
+          </Info>
+          <Info
+            href="https://www.facebook.com/thrivedentalmy/about"
+            target="_blank"
+          >
+            <div>
+              <Facebook />
+              <Instagram />
+            </div>
+            <p>Follow us on social media</p>
+          </Info>
+        </Card>
+        <Card>
+          <h3 style={{fontWeight: 600, textAlign: "center", marginBottom: "20px"}}>Opening Hours</h3>
+          <OpeningHours><Days>Monday-Friday</Days><p>9am - 6pm</p></OpeningHours>
+          <OpeningHours><Days>Saturday</Days><p>9am - 4pm</p></OpeningHours>
+          <OpeningHours><Days>Sunday</Days><p>Closed</p></OpeningHours>
+          <OpeningHours><Days>Public Holidays</Days><p>Closed</p></OpeningHours>
+        </Card>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
   opacity: ${(props) => props.opacity};
-  margin: 5% 10% 0px 10%;
-  border-top: 1px solid var(--eerie-black);
+  padding: 5% 0;
+  background-color: var(--keppel);
   transition: opacity 0.2s ease-in-out;
-  background-color: var(--silver);
-  padding: 50px 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 
   @media (width < 1000px) {
     display: flex;
@@ -49,39 +85,73 @@ const Wrapper = styled.section`
   }
 `;
 
+// const Container = styled.div`
+//   display: flex;
+//   justify-content: space-evenly;
+
+//   @media (width < 1000px) {
+//     display: flex;
+//     flex-direction: column;
+//     margin: 0px;
+//   }
+// `;
 
 const Title = styled.h2`
-  font-size: 36px;
-  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 42px;
+  padding: 50px;
   text-align: center;
 `;
-const Container = styled.div`
+
+const Card = styled.div`
+  min-width: 20%;
+  padding: 2% 3%;
   display: flex;
-  justify-content: center;
-  margin-top: 50px;
-    
-  @media (width < 1000px) {
-    display: flex;
-    flex-direction: column;
-    margin: 0px;
-  }
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #a2dbce;
+  border-radius: 5%;
+  box-shadow: 0px -1px 20px 5px var(--zomp);
 `;
 const Info = styled.a`
-  font-weight: 300;
+  display: flex;
   line-height: 1.5rem;
-  margin: 15px;
+  text-decoration: none;
+  padding: 5% 0;
 
   @media (width < 1000px) {
     font-size: 0.9rem;
   }
-`
+`;
 const Mail = styled(IoMdMail)`
-  font-size: 1.5rem;
-`
+  font-size: 2rem;
+  margin-right: 15px;
+`;
 const Call = styled(IoCall)`
-  font-size: 1.5rem;
-`
+  font-size: 2rem;
+  margin-right: 15px;
+`;
+const Pin = styled(IoLocation)`
+  font-size: 2rem;
+  margin-right: 15px;
+`;
 const Facebook = styled(BsFacebook)`
-  font-size: 1.5rem;
+  font-size: 2rem;
+  margin-right: 15px;
+`;
+const Instagram = styled(RiInstagramFill)`
+  font-size: 2rem;
+  margin-right: 15px;
+`
+
+const OpeningHours = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px;
+`
+
+const Days = styled.p`
+  font-weight: 600;
 `
 export default Contact;
