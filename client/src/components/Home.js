@@ -40,16 +40,17 @@ const Home = () => {
 const Wrapper = styled.section`
   display: flex;
   justify-content: center;
-  padding-top:22vh;
+  padding-top:25vh;
   height: 100vh;
   /* margin: 0 15%; */
 
   @media (width < 1000px) {
     display: block;
     padding-top: 240px;
-    background-image: url("assets/vecteezy_happy-senior-couple-having-a-good-time_1229325.jpg");
+    background-image: url("assets/vecteezy_senior-couple-embracing-outside_1223384.jpg");
     background-size: cover;
-    background-position-y: bottom;
+    background-position-x: center;
+    background-position-y: top;
     margin: 0;
   }
 `;
@@ -57,7 +58,7 @@ const TextWrapper = styled.div`
   display: flex;  
   flex-direction: column;
   /* margin-right: 10%; */
-  width: 50vw;
+  width: 45vw;
 
   @media (width < 1000px) {
     width: 100%;
@@ -70,7 +71,7 @@ const TitleText = styled.div`
   /* padding-top: 50px; */
   position: relative;
   z-index: 1;
-  font-size: 6rem;
+  font-size: 5rem;
   margin-bottom: 5vh;
 
   @media (width < 1000px) {
@@ -93,8 +94,9 @@ const Title = styled.h1`
 `;
 const Title2 = styled.h1`
   font-weight: 500;
-  padding-left: 50px;
+  padding-left: 150px;
   animation: slideLeft 1s;
+  color: var(--zomp);
 
   @media (width < 1000px) {
   padding-left: 0px;
@@ -126,8 +128,9 @@ const Description = styled.p`
 `;
 const Button = styled(HashLink)`
   cursor: pointer;
-  color: var(--silver);
-  background-color: var(--zomp);
+  font-weight: 600;
+  color: var(--zomp);
+  background-color: var(--eerie-black);
   border-radius: 0.5rem;
   overflow :hidden; 
   padding: 1rem 2rem;
@@ -138,11 +141,11 @@ const Button = styled(HashLink)`
   will-change: transform;
 
   &:hover{
-    color: var(--zomp);
+    color: var(--eerie-black);
   }
 
   &::after{
-    background-color: var(--eerie-black);
+    background-color: var(--zomp);
     border-radius: 0.5rem;
     content: '';
     height: 100%;
@@ -161,7 +164,7 @@ const Button = styled(HashLink)`
   }
 `;
 const Images = styled.div`
-margin-left: 5%;
+ margin-left: 5%;
   display: flex;
   height: 80vh;
   width: 50vh;
@@ -207,7 +210,7 @@ const Image2 = styled.div`
   }
 `;
 const Hue2 = styled.div`
-  background-color: var(--zomp);
+  background-color: var(--eerie-black);
   z-index: 1;
   opacity: 0.5;
   height: ${props => `${props.height}%`};

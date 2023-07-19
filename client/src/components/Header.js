@@ -20,7 +20,7 @@ const Header = ({ scrollPercentage }) => {
     <Wrapper>
       <Content>
         <Logo
-          src="/assets/ThriveDentalLogo.jpg"
+          src="/assets/thriveLogo1.png"
           alt="logo clôtures cinq étoiles"
         />
         {window.screen.width > 1000 ? (
@@ -35,7 +35,7 @@ const Header = ({ scrollPercentage }) => {
             >
               <Text tid="option2" />
             </Option>
-            <Option smooth to="/#projects">
+            <Option smooth to="/#services">
               <Text tid="option3" />
             </Option>
             <Option smooth to="/#contact">

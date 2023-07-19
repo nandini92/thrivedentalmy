@@ -6,6 +6,7 @@ import GlobalStyles from "./GlobalStyles";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import About from "./components/About";
+import Services from "./components/Services";
 import Contact from "./components/Contact";
 
 function App() {
@@ -36,12 +37,14 @@ function App() {
           <>
             <Home />
             <About opacity={scrollPercentage > 15 ? 1 : 0} />
+            <Services opacity={scrollPercentage > 25 ? 1 : 0} />
             <Contact opacity={scrollPercentage > 80 ? 1 : 0} />
           </>
         ) : (
           <>
             <Home />
             <About opacity={scrollPercentage > 10 ? 1 : 0} />
+            <Services opacity={scrollPercentage > 25 ? 1 : 0} />
             <Contact opacity={scrollPercentage > 90 ? 1 : 0} />
           </>
         )}

@@ -28,7 +28,7 @@ const Menu = ({rollDown, setRollDown}) => {
 
 const Dropdown = styled.div`
   width: 100%;
-  background-color: var(--grey);
+  background-color: var(--silver);
   display: flex;
   flex-direction: column;
 `;
