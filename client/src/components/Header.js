@@ -20,7 +20,7 @@ const Header = ({ scrollPercentage }) => {
     <Wrapper>
       <Content>
         <Logo
-          src="/assets/thriveLogo1.png"
+          src="/assets/thriveLogo2.png"
           alt="logo clôtures cinq étoiles"
         />
         {window.screen.width > 1000 ? (
@@ -71,7 +71,8 @@ const Content = styled.div`
   }
 `;
 const Logo = styled.img`
-  height: 10vh;
+  height: 8vh;
+  align-self: center;
 `;
 const Links = styled.div`
   display: flex;

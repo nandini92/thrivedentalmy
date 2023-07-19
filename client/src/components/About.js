@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { AiOutlineEyeInvisible } from "react-icons/ai";
-import { TfiLock } from "react-icons/tfi";
-import { MdCheckCircle } from "react-icons/md";
+import { RiDoubleQuotesL } from "react-icons/ri";
+import { RiDoubleQuotesR } from "react-icons/ri";
 
 import { Text } from "../contexts/LanguageContext";
 
@@ -12,37 +11,16 @@ const About = ({ opacity }) => {
       <Content>
         <Founder>
           <Avatar src="/assets/MeeraAsokan.jpg" alt="Founder" />
-          <Profile>
-          <p>Meera Asokan</p>
-          <p>Founder</p>
-          </Profile>
+          <Name>Meera Asokan</Name>
+          <Qualification>BDS from Rajiv Gandhi University of Health Sciences, India (2011)</Qualification>
+          <Qualification>Ketua Pergigian Penjagaan Khas, Hospital Rehabilitasi Cheras (2017-2019)</Qualification>
         </Founder>
         <Description opacity={opacity}>
           <p>
-            <Text tid="aboutUsDescription" />
+          <QuotesL /> <span><Text tid="aboutUsDescription" /></span> <QuotesR />
           </p>
         </Description>
       </Content>
-      <Icons>
-        <div opacity={opacity}>
-          <AiOutlineEyeInvisible style={{ fontSize: "50px" }} />
-          <p>
-            <Text tid="icon1" />
-          </p>
-        </div>
-        <div opacity={opacity}>
-          <TfiLock style={{ fontSize: "50px" }} />
-          <p>
-            <Text tid="icon2" />
-          </p>
-        </div>
-        <div opacity={opacity}>
-          <MdCheckCircle style={{ fontSize: "50px" }} />
-          <p>
-            <Text tid="icon3" />
-          </p>
-        </div>
-      </Icons>
     </Wrapper>
   );
 };
@@ -75,9 +53,10 @@ const Separator = styled.div`
   }
 `;
 const Founder = styled.div`
-  width: 50%;
+  width: 60%;
   padding: 0px 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -86,21 +65,21 @@ const Founder = styled.div`
     padding: 10% 0;
   }
 `
-const Profile =  styled.div`
-    display: flex;
-    flex-direction: column;
-    padding-left: 50px;
+const Name = styled.p` 
+  font-weight: 600;
+  margin-bottom: 10px;
+`;
 
-    p:nth-child(even){
-      padding-top: 5px;
-      font-weight: 300;
-    }
- `;
+const Qualification = styled.p`
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+`;
 
 const Avatar = styled.img`
   z-index: 100;
   height: 150px;
   width: 150px;
+  margin-bottom: 10px;
   border-radius: 75px;
 `;
 const Content = styled.div`
@@ -114,32 +93,37 @@ const Content = styled.div`
   }
 `;
 
-const Icons = styled.div`
-  width: 50%;
-  padding: 100px 0 0 0;
-  align-self: center;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+// const Icons = styled.div`
+//   width: 50%;
+//   padding: 100px 0 0 0;
+//   align-self: center;
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
 
-  div {
-    height: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
+//   div {
+//     height: 80px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: space-between;
+//   }
 
-  @media (width < 1000px) {
-    width: 100%;
-    padding: 10% 0;
-  }
-`;
+//   @media (width < 1000px) {
+//     width: 100%;
+//     padding: 10% 0;
+//   }
+// `;
 
 const Description = styled.div`
   width: 50%;
   font-weight: 300;
-  line-height: 1.5rem;
+  line-height: 45px;
+  font-size: 1.1rem;
+  font-style: italic;
+  align-self: center;
+  position: relative;
+  z-index: 100;
 
   @media (width < 1000px) {
     width: 100%;
@@ -155,4 +139,14 @@ const Description = styled.div`
     }
   }
 `;
+
+const QuotesL = styled(RiDoubleQuotesL)`
+  opacity: 0.7;
+  font-size: 35px;
+`;
+const QuotesR = styled(RiDoubleQuotesR)`
+  opacity: 0.7;  
+  font-size: 35px;
+`;
+
 export default About;
