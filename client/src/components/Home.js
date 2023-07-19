@@ -173,7 +173,7 @@ const Image1 = styled.div`
   position: relative;
   top: 6%;
   right: 10%;
-  background-image: url("assets/crop1.JPG");
+  background-image: url("assets/Crop1.JPG");
   background-size: cover;
   height: 62%;
   width: 30%;
@@ -195,7 +195,7 @@ const Hue1 = styled.div`
   transition: ease-in-out 0.5s;
 `;
 const Image2 = styled.div`
-  background-image: url("assets/crop2.JPG");
+  background-image: url("assets/Crop2.JPG");
   background-size: cover;
   height: 70%;
   width: 90%;
