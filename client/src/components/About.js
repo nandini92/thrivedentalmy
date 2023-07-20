@@ -74,10 +74,14 @@ const Separator = styled.div`
 `;
 const Title = styled.h2`
   padding: 50px;
-  font-size: 36px;
+  font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 20px;
   text-align: center;
+
+  @media (width < 1000px) {
+    padding: 5%;
+  }
 `;
 const Founder = styled.div`
   width: 60%;
@@ -95,11 +99,14 @@ const Founder = styled.div`
 const Name = styled.p` 
   font-weight: 600;
   margin-bottom: 10px;
+  font-size: 2rem;
 `;
 
 const Qualification = styled.p`
   font-size: 0.8rem;
   margin-bottom: 5px;
+  font-size: 0.9rem;
+  text-align: center;
 `;
 
 const Avatar = styled.img`
@@ -154,7 +161,8 @@ const Description = styled.div`
 
   @media (width < 1000px) {
     width: 100%;
-    font-size: 0.8em;
+    line-height: 3rem;
+    text-align: center;
   }
 
   animation: ${(props) => props.opacity && "slideLeft"} 1s;
@@ -190,6 +198,18 @@ const Carousel = styled.div`
     margin-right: 5%;
     object-fit: cover;
     max-width: 30%;
+  }
+  
+  @media (width < 1000px) {
+    -webkit-animation: bannermove 20s linear infinite;
+    -moz-animation: bannermove 20s linear infinite;
+     -ms-animation: bannermove 20s linear infinite;
+      -o-animation: bannermove 20s linear infinite;
+         animation: bannermove 20s linear infinite;
+    
+    * {
+      max-width: 100%;
+    }
   }
 
   @keyframes bannermove {

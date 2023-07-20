@@ -71,7 +71,7 @@ const Wrapper = styled.section`
   @media (width < 1000px) {
     display: flex;
     flex-direction: column;
-    margin: 10% 0px;
+    margin-top: 10%;
     padding: 10%;
   }
 
@@ -112,6 +112,11 @@ const Card = styled.div`
   background-color: #a2dbce;
   border-radius: 5%;
   box-shadow: 0px -1px 20px 5px var(--zomp);
+
+  @media (width < 1000px) {
+    min-width: 100%;
+    margin-bottom: 5%;
+  }
 `;
 const Info = styled.a`
   display: flex;

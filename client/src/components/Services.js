@@ -54,14 +54,18 @@ const Wrapper = styled.div`
   }
 `;
 const Title = styled.h2`
-  padding: 50px;
-  font-size: 36px;
+  padding: 5%;
+  font-size: 2.5rem;
   font-weight: 600;
   text-align: center;
 `;
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (width < 1000px) {
+    flex-direction: column;
+  }
 `;
 const Block = styled.div`
   width: 30%;
@@ -72,6 +76,10 @@ const Block = styled.div`
 
   p {
     margin-bottom: 5px;
+  }
+
+  @media (width < 1000px) {
+    width: 100%;
   }
 `;
 const Image = styled.img`

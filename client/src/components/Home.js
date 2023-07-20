@@ -46,7 +46,7 @@ const Wrapper = styled.section`
 
   @media (width < 1000px) {
     display: block;
-    padding-top: 240px;
+    padding-top: 75vh;
     background-image: url("assets/vecteezy_senior-couple-embracing-outside_1223384.jpg");
     background-size: cover;
     background-position-x: center;
