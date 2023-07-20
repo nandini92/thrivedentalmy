@@ -53,7 +53,7 @@ const Contact = ({ opacity }) => {
           <OpeningHours><Days>Monday-Friday</Days><p>9am - 6pm</p></OpeningHours>
           <OpeningHours><Days>Saturday</Days><p>9am - 4pm</p></OpeningHours>
           <OpeningHours><Days>Sunday</Days><p>Closed</p></OpeningHours>
-          <OpeningHours><Days>Public Holidays</Days><p>Closed</p></OpeningHours>
+          <OpeningHours><Days>Public Holidays</Days><p> Closed on selected public holidays</p></OpeningHours>
         </Card>
     </Wrapper>
   );
@@ -98,7 +98,7 @@ const Wrapper = styled.section`
 
 const Title = styled.h2`
   font-weight: 600;
-  font-size: 42px;
+  font-size: 2rem;
   padding: 50px;
   text-align: center;
 `;
@@ -153,5 +153,6 @@ const OpeningHours = styled.div`
 
 const Days = styled.p`
   font-weight: 600;
+  margin-right: 50px;
 `
 export default Contact;

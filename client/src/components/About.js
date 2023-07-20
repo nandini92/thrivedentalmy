@@ -4,7 +4,20 @@ import { RiDoubleQuotesR } from "react-icons/ri";
 
 import { Text } from "../contexts/LanguageContext";
 
+
 const About = ({ opacity }) => {
+  const imageCarouselGenerator = () => {
+    const images = [];
+
+    for (let i = 1; i < 11 + 1; i++) {
+      images.push(
+        <img src={`/assets/clinic/clinic_${i}.jpg`} alt={`clinic_${i}`}/>
+      );
+    }
+
+    return images;
+  };
+
   return (
     <Wrapper id="about-us" opacity={opacity}>
       <Separator opacity={opacity} />
@@ -14,7 +27,9 @@ const About = ({ opacity }) => {
           <Avatar src="/assets/MeeraAsokan.jpg" alt="Founder" />
           <Name>Meera Asokan</Name>
           <Qualification>BDS from Rajiv Gandhi University of Health Sciences, India (2011)</Qualification>
-          <Qualification>Ketua Pergigian Penjagaan Khas, Hospital Rehabilitasi Cheras (2017-2019)</Qualification>
+          <Qualification>Head of Special Care Dentistry Unit, Cheras Rehabilitation Hospital (2017-2019)</Qualification>
+          <Qualification>Member of International Association for Disability and Oral Health (iADH)
+</Qualification>
         </Founder>
         <Description opacity={opacity}>
           <p>
@@ -22,6 +37,9 @@ const About = ({ opacity }) => {
           </p>
         </Description>
       </Content>
+      <Carousel>
+        {imageCarouselGenerator()}        
+      </Carousel>
     </Wrapper>
   );
 };
@@ -29,7 +47,8 @@ const About = ({ opacity }) => {
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
+  overflow: hidden;
   margin: 0 10% 5% 10%;
   opacity: ${(props) => props.opacity};
 
@@ -156,5 +175,30 @@ const QuotesR = styled(RiDoubleQuotesR)`
   opacity: 0.7;  
   font-size: 35px;
 `;
+const Carousel = styled.div`
+  margin-top: 5%;
+  height: 50vh;
+  display: flex;
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: bannermove 30s linear infinite;
+    -moz-animation: bannermove 30s linear infinite;
+     -ms-animation: bannermove 30s linear infinite;
+      -o-animation: bannermove 30s linear infinite;
+         animation: bannermove 30s linear infinite;
 
+  * {
+    margin-right: 5%;
+    object-fit: cover;
+    max-width: 30%;
+  }
+
+  @keyframes bannermove {
+    0% {
+      transform: translate(0, 0);
+  }
+    100% {
+      transform: translate(-280%, 0);
+    }
+  }
+`;
 export default About;
