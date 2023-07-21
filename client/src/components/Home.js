@@ -67,7 +67,7 @@ const Wrapper = styled.section`
 
   @media (width < 1000px) {
     display: block;
-    padding-top: 72vh;
+    padding-top: 75vh;
     background-image: ${(props) =>
       `url("assets/home/mobileImage_${props.imagenum}.jpg")`};
     background-size: cover;

@@ -16,10 +16,6 @@ const Header = ({ scrollPercentage }) => {
     window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
   };
 
-  const testClick = (e) => {
-    console.log(e);
-  }
-
   return (
     <Wrapper>
       <Content>

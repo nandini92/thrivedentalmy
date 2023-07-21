@@ -88,7 +88,7 @@ const Title = styled.h2`
   text-align: center;
 
   @media (width < 1000px) {
-    padding: 5%;
+    padding: 10% 0 0;
   }
 `;
 const Founder = styled.div`
@@ -101,7 +101,7 @@ const Founder = styled.div`
 
   @media (width < 1000px) {
     width: 100%;
-    padding: 10% 0;
+    padding: 0 0 10% 0;
   }
 `;
 const Name = styled.p`

@@ -14,7 +14,7 @@ const Menu = ({rollDown, setRollDown}) => {
           <Option smooth to="/#about-us">
             <Text tid="option2" />
           </Option>
-          <Option smooth to="/#projects">
+          <Option smooth to="/#services">
             <Text tid="option3" />
           </Option>
           <Option smooth to="/#contact">
