@@ -21,7 +21,7 @@ const Home = () => {
   }, []);
 
   return (
-    <Wrapper id="home">
+    <Wrapper id="home" imagenum={imageNum}>
       <TextWrapper>
         <TitleText>
           <Title>
@@ -40,20 +40,20 @@ const Home = () => {
           <Text tid="option4" />
         </Button>
       </TextWrapper>
-      {window.screen.width > 1000 &&
-        (<Images>
-            <Image1 imagenum={imageNum}>
-              <Hue1 height={height[0]}></Hue1>
-            </Image1>
-            <Image2
-              imagenum={imageNum}
-              onMouseEnter={() => setHeight([0, 100])}
-              onMouseLeave={() => setHeight([100, 0])}
-            >
-              <Hue2 height={height[1]}></Hue2>
-            </Image2>
-          </Images>
-        )}
+      {window.screen.width > 1000 && (
+        <Images>
+          <Image1 imagenum={imageNum}>
+            <Hue1 height={height[0]}></Hue1>
+          </Image1>
+          <Image2
+            imagenum={imageNum}
+            onMouseEnter={() => setHeight([0, 100])}
+            onMouseLeave={() => setHeight([100, 0])}
+          >
+            <Hue2 height={height[1]}></Hue2>
+          </Image2>
+        </Images>
+      )}
     </Wrapper>
   );
 };
@@ -67,12 +67,15 @@ const Wrapper = styled.section`
 
   @media (width < 1000px) {
     display: block;
-    padding-top: 75vh;
-    background-image: url("assets/vecteezy_senior-couple-embracing-outside_1223384.jpg");
+    padding-top: 72vh;
+    background-image: ${(props) =>
+      `url("assets/home/mobileImage_${props.imagenum}.jpg")`};
     background-size: cover;
     background-position-x: center;
     background-position-y: top;
     margin: 0;
+
+    transition: background-image 0.5s ease-in-out;
   }
 `;
 const TextWrapper = styled.div`
@@ -104,6 +107,10 @@ const TitleText = styled.div`
 `;
 const Title = styled.h1`
   font-weight: 300;
+  -webkit-animation: slideRight 1s;
+  -moz-animation: slideRight 1s;
+  -ms-animation: slideRight 1s;
+  -o-animation: slideRight 1s;
   animation: slideRight 1s;
 
   @keyframes slideRight {
@@ -116,6 +123,10 @@ const Title = styled.h1`
 const Title2 = styled.h1`
   font-weight: 500;
   padding-left: 150px;
+  -webkit-animation: slideLeft 1s;
+  -moz-animation: slideLeft 1s;
+  -ms-animation: slideLeft 1s;
+  -o-animation: slideLeft 1s;
   animation: slideLeft 1s;
   color: var(--zomp);
 
@@ -201,6 +212,10 @@ const Image1 = styled.div`
   height: 62%;
   width: 30%;
 
+  -webkit-animation: slideUp 1s;
+  -moz-animation: slideUp 1s;
+  -ms-animation: slideUp 1s;
+  -o-animation: slideUp 1s;
   animation: slideUp 1s;
   transition: background-image 0.5s ease-in-out;
 
@@ -226,9 +241,12 @@ const Image2 = styled.div`
   height: 70%;
   width: 90%;
 
+  -webkit-animation: slideDown 1s;
+  -moz-animation: slideDown 1s;
+  -ms-animation: slideDown 1s;
+  -o-animation: slideDown 1s;
   animation: slideDown 1s;
   transition: background-image 0.5s ease-in-out;
-
 
   @keyframes slideDown {
     from {

@@ -38,7 +38,7 @@ const Services = ({ opacity }) => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   margin: 0 10% 5% 10%;
   border-top: 1px solid var(--eerie-black);
   opacity: ${(props) => props.opacity};

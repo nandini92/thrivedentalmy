@@ -63,7 +63,7 @@ const Contact = ({ opacity }) => {
       </Card>
       <Card>
         <h3
-          style={{ fontWeight: 600, textAlign: "center", marginBottom: "20px" }}
+          style={{ fontWeight: 600, textAlign: "center", margin: "15px" }}
         >
           Opening Hours
         </h3>
@@ -130,6 +130,10 @@ const Title = styled.h2`
   font-size: 2rem;
   padding: 50px;
   text-align: center;
+
+  @media (width < 1000px) {
+    padding: 0 0 10% 0;
+  }
 `;
 
 const Card = styled.div`
@@ -154,6 +158,7 @@ const Info = styled.div`
 
   @media (width < 1000px) {
     font-size: 0.9rem;
+    padding: 10px 0;
   }
 `;
 const Mail = styled(IoMdMail)`
@@ -171,10 +176,18 @@ const Pin = styled(IoLocation)`
 const Facebook = styled(BsFacebook)`
   font-size: 2rem;
   margin-right: 15px;
+
+  @media (width < 1000px) {
+    margin-right: 5px;
+  }
 `;
 const Instagram = styled(RiInstagramFill)`
   font-size: 2rem;
   margin-right: 15px;
+
+  @media (width < 1000px) {
+    margin-right: 5px;
+  }
 `;
 
 const OpeningHours = styled.div`
