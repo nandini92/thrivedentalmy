@@ -16,6 +16,10 @@ const Header = ({ scrollPercentage }) => {
     window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
   };
 
+  const testClick = (e) => {
+    console.log(e);
+  }
+
   return (
     <Wrapper>
       <Content>
@@ -35,7 +39,7 @@ const Header = ({ scrollPercentage }) => {
             >
               <Text tid="option2" />
             </Option>
-            <Option smooth to="/#services">
+            <Option smooth to="/#services" >
               <Text tid="option3" />
             </Option>
             <Option smooth to="/#contact">

@@ -47,6 +47,10 @@ const Title = styled.h2`
   padding: 50px;
   text-align: center;
   color: var(--keppel);
+
+  @media (width < 1000px) {
+    padding: 0 0 10% 0;
+}
 `;
 const Slider = styled.div`
 @media (width < 1000px) {

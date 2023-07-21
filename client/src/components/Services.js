@@ -39,7 +39,7 @@ const Services = ({ opacity }) => {
 };
 
 const Wrapper = styled.section`
-  margin: 0 10% 5% 10%;
+  margin: 0 10%;
   border-top: 1px solid var(--eerie-black);
   opacity: ${(props) => props.opacity};
   transition: opacity 0.2s ease-in-out;

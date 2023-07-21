@@ -62,7 +62,7 @@ const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   padding-top: 25vh;
-  height: 100vh;
+  height: 95vh;
   /* margin: 0 15%; */
 
   @media (width < 1000px) {
@@ -74,6 +74,7 @@ const Wrapper = styled.section`
     background-position-x: center;
     background-position-y: top;
     margin: 0;
+    height: 100vh;
 
     transition: background-image 0.5s ease-in-out;
   }
