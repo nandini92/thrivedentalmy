@@ -4,14 +4,13 @@ import { RiDoubleQuotesR } from "react-icons/ri";
 
 import { Text } from "../contexts/LanguageContext";
 
-
 const About = ({ opacity }) => {
   const imageCarouselGenerator = () => {
     const images = [];
 
     for (let i = 1; i < 11 + 1; i++) {
       images.push(
-        <img src={`/assets/clinic/clinic_${i}.jpg`} alt={`clinic_${i}`}/>
+        <img src={`/assets/clinic/clinic_${i}.jpg`} alt={`clinic_${i}`} />
       );
     }
 
@@ -26,20 +25,29 @@ const About = ({ opacity }) => {
         <Founder>
           <Avatar src="/assets/MeeraAsokan.jpg" alt="Founder" />
           <Name>Meera Asokan</Name>
-          <Qualification>BDS from Rajiv Gandhi University of Health Sciences, India (2011)</Qualification>
-          <Qualification>Head of Special Care Dentistry Unit, Cheras Rehabilitation Hospital (2017-2019)</Qualification>
-          <Qualification>Member of International Association for Disability and Oral Health (iADH)
-</Qualification>
+          <Qualification>
+            BDS from Rajiv Gandhi University of Health Sciences, India (2011)
+          </Qualification>
+          <Qualification>
+            Head of Special Care Dentistry Unit, Cheras Rehabilitation Hospital
+            (2017-2019)
+          </Qualification>
+          <Qualification>
+            Member of International Association for Disability and Oral Health
+            (iADH)
+          </Qualification>
         </Founder>
         <Description opacity={opacity}>
           <p>
-          <QuotesL /> <span><Text tid="aboutUsDescription" /></span> <QuotesR />
+            <QuotesL />{" "}
+            <span>
+              <Text tid="aboutUsDescription" />
+            </span>{" "}
+            <QuotesR />
           </p>
         </Description>
       </Content>
-      <Carousel>
-        {imageCarouselGenerator()}        
-      </Carousel>
+      <Carousel>{imageCarouselGenerator()}</Carousel>
     </Wrapper>
   );
 };
@@ -95,8 +103,8 @@ const Founder = styled.div`
     width: 100%;
     padding: 10% 0;
   }
-`
-const Name = styled.p` 
+`;
+const Name = styled.p`
   font-weight: 600;
   margin-bottom: 10px;
   font-size: 2rem;
@@ -180,7 +188,7 @@ const QuotesL = styled(RiDoubleQuotesL)`
   font-size: 35px;
 `;
 const QuotesR = styled(RiDoubleQuotesR)`
-  opacity: 0.7;  
+  opacity: 0.7;
   font-size: 35px;
 `;
 const Carousel = styled.div`
@@ -189,24 +197,24 @@ const Carousel = styled.div`
   display: flex;
   transform: translate3d(0, 0, 0);
   -webkit-animation: bannermove 30s linear infinite;
-    -moz-animation: bannermove 30s linear infinite;
-     -ms-animation: bannermove 30s linear infinite;
-      -o-animation: bannermove 30s linear infinite;
-         animation: bannermove 30s linear infinite;
+  -moz-animation: bannermove 30s linear infinite;
+  -ms-animation: bannermove 30s linear infinite;
+  -o-animation: bannermove 30s linear infinite;
+  animation: bannermove 30s linear infinite;
 
   * {
     margin-right: 5%;
     object-fit: cover;
     max-width: 30%;
   }
-  
+
   @media (width < 1000px) {
     -webkit-animation: bannermove 20s linear infinite;
     -moz-animation: bannermove 20s linear infinite;
-     -ms-animation: bannermove 20s linear infinite;
-      -o-animation: bannermove 20s linear infinite;
-         animation: bannermove 20s linear infinite;
-    
+    -ms-animation: bannermove 20s linear infinite;
+    -o-animation: bannermove 20s linear infinite;
+    animation: bannermove 20s linear infinite;
+
     * {
       max-width: 100%;
     }
@@ -215,7 +223,7 @@ const Carousel = styled.div`
   @keyframes bannermove {
     0% {
       transform: translate(0, 0);
-  }
+    }
     100% {
       transform: translate(-280%, 0);
     }

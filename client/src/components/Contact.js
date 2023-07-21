@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useContext } from "react";
 import { BsFacebook } from "react-icons/bs";
-import { IoMdMail  } from "react-icons/io";
+import { IoMdMail } from "react-icons/io";
 import { IoCall, IoLocation } from "react-icons/io5";
 import { RiInstagramFill } from "react-icons/ri";
 
@@ -15,46 +15,75 @@ const Contact = ({ opacity }) => {
       <Title>
         <Text tid="ContactTitle" />
       </Title>
-        <Card>
-          <Info href="mailto:thrivedentalmy@gmail.com">
-            <Mail />
-            <div>
-              <p style={{fontWeight: 600}}>thrivedentalmy@gmail.com</p>
-              <p>Send us an email</p>
-            </div>
-          </Info>
-          <Info href="tel:+60 10-234 1229">
-            <Call />
-            <div>
-              <p style={{fontWeight: 600}}>+60 10-234 1229</p>
-              <p>Book an appointment</p>
-            </div>
-          </Info>
-          <Info >
-            <Pin />
-            <div>
-              <p style={{fontWeight: 600}}>Block C-GF-13, Damansara Intan,</p>
-              <p>47400, Petaling Jaya</p>
-            </div>
-          </Info>
-          <Info
-            href="https://www.facebook.com/thrivedentalmy/about"
-            target="_blank"
-          >
-            <div>
+      <Card>
+        <Info>
+          <Mail />
+          <div>
+            <a
+              href="mailto:thrivedentalmy@gmail.com"
+              style={{ fontWeight: 600 }}
+            >
+              thrivedentalmy@gmail.com
+            </a>
+            <p>Send us an email</p>
+          </div>
+        </Info>
+        <Info>
+          <Call />
+          <div>
+            <a href="tel:+60 10-234 1229" style={{ fontWeight: 600 }}>
+              +60 10-234 1229
+            </a>
+            <p>Book an appointment</p>
+          </div>
+        </Info>
+        <Info>
+          <Pin />
+          <div>
+            <p style={{ fontWeight: 600 }}>Block C-GF-13, Damansara Intan,</p>
+            <p>47400, Petaling Jaya</p>
+          </div>
+        </Info>
+        <Info>
+          <div>
+            <a
+              href="https://www.facebook.com/thrivedentalmy/about"
+              target="_blank"
+            >
               <Facebook />
-              <Instagram />
-            </div>
-            <p>Follow us on social media</p>
-          </Info>
-        </Card>
-        <Card>
-          <h3 style={{fontWeight: 600, textAlign: "center", marginBottom: "20px"}}>Opening Hours</h3>
-          <OpeningHours><Days>Monday-Friday</Days><p>9am - 6pm</p></OpeningHours>
-          <OpeningHours><Days>Saturday</Days><p>9am - 4pm</p></OpeningHours>
-          <OpeningHours><Days>Sunday</Days><p>Closed</p></OpeningHours>
-          <OpeningHours><Days>Public Holidays</Days><p> Closed on selected public holidays</p></OpeningHours>
-        </Card>
+            </a>
+            <a
+              href="https://www.instagram.com/thrivedentalmy/?hl=en"
+              target="_blank">
+            <Instagram />
+            </a>
+          </div>
+          <p>Follow us on social media <span style={{fontWeight: 600}}>@thrivedentalmy</span></p>
+        </Info>
+      </Card>
+      <Card>
+        <h3
+          style={{ fontWeight: 600, textAlign: "center", marginBottom: "20px" }}
+        >
+          Opening Hours
+        </h3>
+        <OpeningHours>
+          <Days>Monday-Friday</Days>
+          <p>9am - 6pm</p>
+        </OpeningHours>
+        <OpeningHours>
+          <Days>Saturday</Days>
+          <p>9am - 4pm</p>
+        </OpeningHours>
+        <OpeningHours>
+          <Days>Sunday</Days>
+          <p>Closed</p>
+        </OpeningHours>
+        <OpeningHours>
+          <Days>Public Holidays</Days>
+          <p> Closed on selected public holidays</p>
+        </OpeningHours>
+      </Card>
     </Wrapper>
   );
 };
@@ -104,13 +133,13 @@ const Title = styled.h2`
 `;
 
 const Card = styled.div`
-  min-width: 20%;
-  padding: 2% 3%;
+  padding: 1% 2%;
+  font-size:0.9rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #a2dbce;
-  border-radius: 5%;
+  border-radius: 10px;
   box-shadow: 0px -1px 20px 5px var(--zomp);
 
   @media (width < 1000px) {
@@ -118,10 +147,9 @@ const Card = styled.div`
     margin-bottom: 5%;
   }
 `;
-const Info = styled.a`
+const Info = styled.div`
   display: flex;
   line-height: 1.5rem;
-  text-decoration: none;
   padding: 5% 0;
 
   @media (width < 1000px) {
@@ -147,17 +175,17 @@ const Facebook = styled(BsFacebook)`
 const Instagram = styled(RiInstagramFill)`
   font-size: 2rem;
   margin-right: 15px;
-`
+`;
 
 const OpeningHours = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 5px;
-`
+`;
 
 const Days = styled.p`
   font-weight: 600;
-  margin-right: 50px;
-`
+  margin-right:25px;
+`;
 export default Contact;

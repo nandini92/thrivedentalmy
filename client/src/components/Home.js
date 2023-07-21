@@ -1,38 +1,59 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import { Text } from "../contexts/LanguageContext";
 
 const Home = () => {
-  const [height, setHeight] = useState([100,0]);
+  const [height, setHeight] = useState([100, 0]);
+  const [imageNum, setImageNum] = useState(1);
+
+  useEffect(() => {
+    let num = 1;
+    setInterval(() => {
+      if (num === 1) {
+        setImageNum(2);
+        num++;
+      } else {
+        setImageNum(1);
+        num--;
+      }
+    }, 5000);
+  }, []);
 
   return (
     <Wrapper id="home">
       <TextWrapper>
         <TitleText>
-          <Title><Text tid="landingHeader1" /></Title>
-          <Title2><Text tid="landingHeader2"/></Title2>
-        </TitleText>  
+          <Title>
+            <Text tid="landingHeader1" />
+          </Title>
+          <Title2>
+            <Text tid="landingHeader2" />
+          </Title2>
+        </TitleText>
         {window.screen.width > 1000 && (
           <Description>
             <Text tid="landingDescription" />
-        </Description>
+          </Description>
         )}
-          <Button smooth to='/#contact'><Text tid="option4" /></Button>
+        <Button smooth to="/#contact">
+          <Text tid="option4" />
+        </Button>
       </TextWrapper>
-        {
-          window.screen.width > 1000 && (
-            <Images>
-              <Image1>
-                <Hue1 height={height[0]}></Hue1>
-              </Image1>
-              <Image2 onMouseEnter={() => setHeight([0,100])} onMouseLeave={() => setHeight([100,0])}>
-                <Hue2 height={height[1]}></Hue2>
-              </Image2>
-            </Images>
-
-          )
-        }
+      {window.screen.width > 1000 &&
+        (<Images>
+            <Image1 imagenum={imageNum}>
+              <Hue1 height={height[0]}></Hue1>
+            </Image1>
+            <Image2
+              imagenum={imageNum}
+              onMouseEnter={() => setHeight([0, 100])}
+              onMouseLeave={() => setHeight([100, 0])}
+            >
+              <Hue2 height={height[1]}></Hue2>
+            </Image2>
+          </Images>
+        )}
     </Wrapper>
   );
 };
@@ -40,7 +61,7 @@ const Home = () => {
 const Wrapper = styled.section`
   display: flex;
   justify-content: center;
-  padding-top:25vh;
+  padding-top: 25vh;
   height: 100vh;
   /* margin: 0 15%; */
 
@@ -55,7 +76,7 @@ const Wrapper = styled.section`
   }
 `;
 const TextWrapper = styled.div`
-  display: flex;  
+  display: flex;
   flex-direction: column;
   /* margin-right: 10%; */
   width: 45vw;
@@ -84,7 +105,7 @@ const TitleText = styled.div`
 const Title = styled.h1`
   font-weight: 300;
   animation: slideRight 1s;
-  
+
   @keyframes slideRight {
     from {
       transform: translateX(-100%);
@@ -99,9 +120,9 @@ const Title2 = styled.h1`
   color: var(--zomp);
 
   @media (width < 1000px) {
-  padding-left: 0px;
+    padding-left: 0px;
   }
-  
+
   @keyframes slideLeft {
     from {
       transform: translateX(100%);
@@ -132,7 +153,7 @@ const Button = styled(HashLink)`
   color: var(--zomp);
   background-color: var(--eerie-black);
   border-radius: 0.5rem;
-  overflow :hidden; 
+  overflow: hidden;
   padding: 1rem 2rem;
   text-align: center;
   width: 200px;
@@ -140,14 +161,14 @@ const Button = styled(HashLink)`
   transition: 0.2s transform ease-in-out;
   will-change: transform;
 
-  &:hover{
+  &:hover {
     color: var(--eerie-black);
   }
 
-  &::after{
+  &::after {
     background-color: var(--zomp);
     border-radius: 0.5rem;
-    content: '';
+    content: "";
     height: 100%;
     width: 100%;
     position: absolute;
@@ -159,12 +180,12 @@ const Button = styled(HashLink)`
     z-index: -1;
   }
 
-  &:hover::after{
+  &:hover::after {
     transform: translate(0, 0);
   }
 `;
 const Images = styled.div`
- margin-left: 5%;
+  margin-left: 5%;
   display: flex;
   height: 80vh;
   width: 50vh;
@@ -173,13 +194,16 @@ const Image1 = styled.div`
   position: relative;
   top: 6%;
   right: 10%;
-  background-image: url("assets/Crop1.JPG");
+  /* background-image: url("assets/home/Crop1_1.JPG"); */
+  background-image: ${(props) =>
+    `url("assets/home/Crop${props.imagenum}_1.JPG")`};
   background-size: cover;
   height: 62%;
   width: 30%;
 
   animation: slideUp 1s;
-  
+  transition: background-image 0.5s ease-in-out;
+
   @keyframes slideUp {
     from {
       transform: translateY(100%);
@@ -188,20 +212,24 @@ const Image1 = styled.div`
   }
 `;
 const Hue1 = styled.div`
-  background-color: var(--zomp);;
+  background-color: var(--zomp);
   z-index: 1;
   opacity: 0.5;
-  height: ${props => `${props.height}%`};
+  height: ${(props) => `${props.height}%`};
   transition: ease-in-out 0.5s;
 `;
 const Image2 = styled.div`
-  background-image: url("assets/Crop2.JPG");
+  /* background-image: url("assets/home/Crop1_2.JPG"); */
+  background-image: ${(props) =>
+    `url("assets/home/Crop${props.imagenum}_2.JPG")`};
   background-size: cover;
   height: 70%;
   width: 90%;
 
   animation: slideDown 1s;
-  
+  transition: background-image 0.5s ease-in-out;
+
+
   @keyframes slideDown {
     from {
       transform: translateY(-100%);
@@ -213,7 +241,7 @@ const Hue2 = styled.div`
   background-color: var(--eerie-black);
   z-index: 1;
   opacity: 0.5;
-  height: ${props => `${props.height}%`};
+  height: ${(props) => `${props.height}%`};
   transition: ease-in-out 0.5s;
 `;
 export default Home;
