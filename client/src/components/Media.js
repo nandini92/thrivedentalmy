@@ -44,7 +44,6 @@ const Wrapper = styled.section`
 const Title = styled.h2`
   font-weight: 600;
   font-size: 2rem;
-  padding: 50px;
   text-align: center;
   color: var(--keppel);
 

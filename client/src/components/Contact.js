@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useContext } from "react";
 import { BsFacebook } from "react-icons/bs";
+import { FaCopyright } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { IoCall, IoLocation } from "react-icons/io5";
 import { RiInstagramFill } from "react-icons/ri";
@@ -12,96 +13,109 @@ const Contact = ({ opacity }) => {
 
   return (
     <Wrapper id="contact" opacity={opacity}>
-      <Title>
-        <Text tid="ContactTitle" />
-      </Title>
-      <Card>
-        <Info>
-          <Mail />
-          <div>
-            <a
-              href="mailto:thrivedentalmy@gmail.com"
-              style={{ fontWeight: 600 }}
-            >
-              thrivedentalmy@gmail.com
-            </a>
-            <p>Send us an email</p>
-          </div>
-        </Info>
-        <Info>
-          <Call />
-          <div>
-            <a href="tel:+60 10-234 1229" style={{ fontWeight: 600 }}>
-              +60 10-234 1229
-            </a>
-            <p>Book an appointment</p>
-          </div>
-        </Info>
-        <Info>
-          <Pin />
-          <div>
-            <p style={{ fontWeight: 600 }}>Block C-GF-13, Damansara Intan,</p>
-            <p>47400, Petaling Jaya</p>
-          </div>
-        </Info>
-        <Info>
-          <div>
-            <a
-              href="https://www.facebook.com/thrivedentalmy/about"
-              target="_blank"
-            >
-              <Facebook />
-            </a>
-            <a
-              href="https://www.instagram.com/thrivedentalmy/?hl=en"
-              target="_blank">
-            <Instagram />
-            </a>
-          </div>
-          <p>Follow us on social media <span style={{fontWeight: 600}}>@thrivedentalmy</span></p>
-        </Info>
-      </Card>
-      <Card>
-        <h3
-          style={{ fontWeight: 600, textAlign: "center", margin: "15px" }}
-        >
-          Opening Hours
-        </h3>
-        <OpeningHours>
-          <Days>Monday-Friday</Days>
-          <p>9am - 6pm</p>
-        </OpeningHours>
-        <OpeningHours>
-          <Days>Saturday</Days>
-          <p>9am - 4pm</p>
-        </OpeningHours>
-        <OpeningHours>
-          <Days>Sunday</Days>
-          <p>Closed</p>
-        </OpeningHours>
-        <OpeningHours>
-          <Days>Public Holidays</Days>
-          <p> Closed on selected public holidays</p>
-        </OpeningHours>
-      </Card>
+      <ContactWrapper>
+        <Title>
+          <Text tid="ContactTitle" />
+        </Title>
+        <Card>
+          <Info>
+            <Mail />
+            <div>
+              <a
+                href="mailto:thrivedentalmy@gmail.com"
+                style={{ fontWeight: 600 }}
+              >
+                thrivedentalmy@gmail.com
+              </a>
+              <p>Send us an email</p>
+            </div>
+          </Info>
+          <Info>
+            <Call />
+            <div>
+              <a href="tel:+60 10-234 1229" style={{ fontWeight: 600 }}>
+                +60 10-234 1229
+              </a>
+              <p>Book an appointment</p>
+            </div>
+          </Info>
+          <Info>
+            <Pin />
+            <div>
+              <a
+                href="https://goo.gl/maps/E68nJFzKiJuCx3rK6"
+                target="_blank"
+                style={{ fontWeight: 600 }}
+              >
+                Block C-GF-13, Damansara Intan,
+              </a>
+              <p>47400, Petaling Jaya</p>
+            </div>
+          </Info>
+          <Info>
+            <div>
+              <a
+                href="https://www.facebook.com/thrivedentalmy/about"
+                target="_blank"
+              >
+                <Facebook />
+              </a>
+              <a
+                href="https://www.instagram.com/thrivedentalmy/?hl=en"
+                target="_blank"
+              >
+                <Instagram />
+              </a>
+            </div>
+            <p>
+              Follow us on social media{" "}
+              <span style={{ fontWeight: 600 }}>@thrivedentalmy</span>
+            </p>
+          </Info>
+        </Card>
+        <Card>
+          <h3 style={{ fontWeight: 600, textAlign: "center", margin: "15px" }}>
+            Opening Hours
+          </h3>
+          <OpeningHours>
+            <Days>Monday-Friday</Days>
+            <p>9am - 6pm</p>
+          </OpeningHours>
+          <OpeningHours>
+            <Days>Saturday</Days>
+            <p>9am - 4pm</p>
+          </OpeningHours>
+          <OpeningHours>
+            <Days>Sunday</Days>
+            <p>Closed</p>
+          </OpeningHours>
+          <OpeningHours>
+            <Days>Public Holidays</Days>
+            <p>On Selected Days</p>
+          </OpeningHours>
+        </Card>
+      </ContactWrapper>
+      <a href="https://www.vecteezy.com/free-photos">
+        Free Stock photos by Vecteezy
+      </a>
+      <p>
+        <FaCopyright /> Thrive Dental SDN. BHD.
+      </p>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
   opacity: ${(props) => props.opacity};
-  padding: 5% 0;
+  padding: 5% 1% 1%;
   background-color: var(--keppel);
   transition: opacity 0.2s ease-in-out;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  text-align: end;
 
   @media (width < 1000px) {
-    display: flex;
-    flex-direction: column;
     margin-top: 10%;
-    padding: 10%;
+    padding: 1%;
+    text-align: center;
   }
 
   animation: ${(props) => props.opacity && "slideUp"} 1s;
@@ -111,6 +125,19 @@ const Wrapper = styled.section`
       transform: translateY(800px);
       opacity: 0;
     }
+  }
+`;
+
+const ContactWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 5%;
+
+  @media (width < 1000px) {
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
   }
 `;
 
@@ -128,7 +155,6 @@ const Wrapper = styled.section`
 const Title = styled.h2`
   font-weight: 600;
   font-size: 2rem;
-  padding: 50px;
   text-align: center;
 
   @media (width < 1000px) {
@@ -138,7 +164,7 @@ const Title = styled.h2`
 
 const Card = styled.div`
   padding: 1% 2%;
-  font-size:0.9rem;
+  font-size: 0.9rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -199,6 +225,6 @@ const OpeningHours = styled.div`
 
 const Days = styled.p`
   font-weight: 600;
-  margin-right:25px;
+  margin-right: 25px;
 `;
 export default Contact;
