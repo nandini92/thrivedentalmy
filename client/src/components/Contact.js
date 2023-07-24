@@ -110,12 +110,10 @@ const Wrapper = styled.section`
   padding: 5% 1% 1%;
   background-color: var(--keppel);
   transition: opacity 0.2s ease-in-out;
-  text-align: end;
 
   @media (width < 1000px) {
     margin-top: 10%;
     padding: 1%;
-    text-align: center;
   }
 
   animation: ${(props) => props.opacity && "slideUp"} 1s;
