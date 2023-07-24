@@ -95,10 +95,10 @@ const Contact = ({ opacity }) => {
           </OpeningHours>
         </Card>
       </ContactWrapper>
-      <a href="https://www.vecteezy.com/free-photos">
+      <a href="https://www.vecteezy.com/free-photos"  style={{fontSize: "0.6rem"}}>
         Free Stock photos by Vecteezy
       </a>
-      <p>
+      <p  style={{fontSize: "0.6rem"}}>
         <FaCopyright /> Thrive Dental SDN. BHD.
       </p>
     </Wrapper>
