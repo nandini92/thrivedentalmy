@@ -5,11 +5,12 @@ const Media = ({opacity}) => {
     <Wrapper opacity={opacity}>
     <Title>Read about us in detail</Title>
     <Slider>
-        <a href="/assets/media/Brochure-2023.pdf" target="_blank"><Image src="/assets/media/MediaCoverage_1.JPG" alt="MediaCoverage"/></a>
-        <a href="/assets/media/Brochure-2023.pdf" target="_blank"><Image src="/assets/media/MediaCoverage_2.JPG" alt="MediaCoverage"/></a>
-        <a href="/assets/media/Brochure-2023.pdf" target="_blank"><Image src="/assets/media/MediaCoverage_3.JPG" alt="MediaCoverage"/></a>
-        <a href="/assets/media/Brochure-2023.pdf" target="_blank"><Image src="/assets/media/MediaCoverage_4.JPG" alt="MediaCoverage"/></a>
+        <a href="https://www.freemalaysiatoday.com/category/leisure/health/2021/02/18/5-dental-problems-big-small-and-dangerous/?fbclid=IwAR1UPPQrYPn2nwZ_S-BJUA_FCAKE2NOItHlRbNp4B37JGO_uOuK3fXwSaAg" target="_blank"><Image src="/assets/media/MediaCoverage_1.JPG" alt="MediaCoverage"/></a>
+        <a href="https://www.freemalaysiatoday.com/category/leisure/2021/02/17/geriatric-dentistry-why-oral-health-is-overall-health/?fbclid=IwAR36whnjNPrp8h1dI6TMkpzOjfGuCv0QjsIVBDriFG1_apzJ4VnhxCku-co" target="_blank"><Image src="/assets/media/MediaCoverage_2.JPG" alt="MediaCoverage"/></a>
+        <a href="https://relevan.com.my/2023/06/15/jaga-gigi-untuk-jaga-diri/?fbclid=IwAR3S0Nyd4_eNJo2h1GF2SVT0g7b9oOOmMNpPFevaJDJXE8c8na2jO2cqOeg" target="_blank"><Image src="/assets/media/MediaCoverage_3.JPG" alt="MediaCoverage"/></a>
+        <a href="https://relevan.com.my/2023/06/15/kepentingan-penjagaan-oral-dalam-kalangan-warga-emas/?fbclid=IwAR2-N9plPKmRp6gagGa1W---VyADp4ruNWIG0OF2Ecn079Jn7OzlxA1TKsY" target="_blank"><Image src="/assets/media/MediaCoverage_4.JPG" alt="MediaCoverage"/></a>
         <a href="/assets/media/Utusan.pdf" target="_blank"><Image src="/assets/media/MediaCoverage_5.JPG" alt="Utusan"/></a>
+        <a href="https://relevan.com.my/2023/06/15/petua-menjaga-kesihatan-mulut-di-rumah/?fbclid=IwAR3TakCbkJbyb6TP15rN0kxsJUsAK3LusrXbnCCkoJITofxlFWj6X-zyQlw" target="_blank"><Image src="/assets/media/MediaCoverage_6.JPG" alt="MediaCoverage"/></a>
     </Slider>
     </Wrapper> );
 }
@@ -52,11 +53,9 @@ const Title = styled.h2`
 }
 `;
 const Slider = styled.div`
-@media (width < 1000px) {
   display: flex;
   overflow-x: auto;
   max-width: 100vw;
-}
 `
 const Image = styled.img`
     padding-left: 5px;
