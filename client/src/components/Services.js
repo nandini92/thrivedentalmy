@@ -9,7 +9,7 @@ const Services = ({ opacity }) => {
     for (let i = start; i < end + 1; i++) {
       products.push(
         <p>
-          <Text tid={`productType${i}`} />
+          <Text tid={`productType${i}`} key={`productType${i}`}/>
         </p>
       );
     }

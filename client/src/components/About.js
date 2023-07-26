@@ -10,7 +10,7 @@ const About = ({ opacity }) => {
 
     for (let i = 1; i < 11 + 1; i++) {
       images.push(
-        <img src={`/assets/clinic/clinic_${i}.jpg`} alt={`clinic_${i}`} />
+        <img src={`/assets/clinic/clinic_${i}.jpg`} alt={`clinic_${i}`} key={`clinic_${i}`}/>
       );
     }
 
