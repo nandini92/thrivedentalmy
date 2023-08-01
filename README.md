@@ -13,4 +13,4 @@ yarn install
 yarn start
 
 ## Next Steps
-1. Fix the smooth scroll feature. Right now when a section is clicked, the smooth scroll does not scroll to the top of the section and usually scrolls past. This is a problem especially for the contact section.
+1. Fix the smooth scroll feature. Right now when a section is clicked, the smooth scroll does not scroll to the top of the section and usually scrolls past. This is a problem especially for the contact section. [TESTING]
