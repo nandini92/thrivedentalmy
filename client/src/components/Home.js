@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import { Text } from "../contexts/LanguageContext";
 
-const Home = () => {
+const Home = ({ scrollPercentage }) => {
   const [height, setHeight] = useState([100, 0]);
   const [imageNum, setImageNum] = useState(1);
 
@@ -36,9 +36,25 @@ const Home = () => {
             <Text tid="landingDescription" />
           </Description>
         )}
-        <Button smooth to="/#contact">
-          <Text tid="option4" />
-        </Button>
+        {window.screen.width > 1000 ? (
+          <Button
+            smooth
+            to="/#contact"
+          >
+            <Text tid="option4" />
+          </Button>
+        ) : (
+          <Button
+            smooth
+            to="/#contact"
+            style={{zIndex:1000}}
+            position={scrollPercentage > 13 ? "fixed" : "static"}
+            top={scrollPercentage > 9 ? "100px" : undefined}
+            opacity={scrollPercentage > 95 ? "0" : "1"}
+          >
+            <Text tid="option4" />
+          </Button>
+        )}
       </TextWrapper>
       {window.screen.width > 1000 && (
         <Images>
@@ -61,7 +77,7 @@ const Home = () => {
 const Wrapper = styled.section`
   display: flex;
   justify-content: center;
-  padding-top: 25vh;
+  padding-top: 26vh;
   height: 95vh;
   /* margin: 0 15%; */
 
@@ -162,8 +178,8 @@ const Description = styled.p`
 const Button = styled(HashLink)`
   cursor: pointer;
   font-weight: 600;
-  color: var(--zomp);
-  background-color: var(--eerie-black);
+  color: var(--eerie-black);
+  background-color: var(--zomp);
   border-radius: 0.5rem;
   overflow: hidden;
   padding: 1rem 2rem;
@@ -173,12 +189,18 @@ const Button = styled(HashLink)`
   transition: 0.2s transform ease-in-out;
   will-change: transform;
 
+  position: ${(props) => props.position};
+  top: ${(props) => props.top};
+  z-index: ${(props) => props.top};
+  opacity: ${(props) => props.opacity};
+  transition: 0.3s opacity ease-out;
+
   &:hover {
-    color: var(--eerie-black);
+    color: var(--zomp);
   }
 
   &::after {
-    background-color: var(--zomp);
+    background-color: var(--eerie-black);
     border-radius: 0.5rem;
     content: "";
     height: 100%;

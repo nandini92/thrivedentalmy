@@ -8,8 +8,8 @@ const Services = ({ opacity }) => {
 
     for (let i = start; i < end + 1; i++) {
       products.push(
-        <p>
-          <Text tid={`productType${i}`} key={`productType${i}`}/>
+        <p key={`productType-${i}`}>
+          <Text tid={`productType${i}`}/>
         </p>
       );
     }
@@ -21,15 +21,15 @@ const Services = ({ opacity }) => {
     <Wrapper id="services" opacity={opacity}>
       <Title>Care & Services</Title>
       <Content>
-        <Block>
+        <Block key="block-1">
           <Image src="/assets/services/productType1.jpg" />
           {serviceTextGenerator(1, 4)}
         </Block>
-        <Block>
+        <Block key="block-2">
           <Image src="/assets/services/productType2.jpg" />
           {serviceTextGenerator(5, 7)}
         </Block>
-        <Block>
+        <Block key="block-3">
           <Image src="/assets/services/productType3.jpg" />
           {serviceTextGenerator(8, 12)}
         </Block>

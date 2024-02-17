@@ -36,7 +36,7 @@ function App() {
       <Container>
         {window.screen.width > 1000 ? (
           <>
-            <Home />
+            <Home scrollPercentage={scrollPercentage}/>
             <About opacity={scrollPercentage > 5 ? 1 : 0} />
             <Media opacity={scrollPercentage > 35 ? 1 : 0} />
             <Services opacity={scrollPercentage > 45 ? 1 : 0} />
@@ -44,7 +44,7 @@ function App() {
           </>
         ) : (
           <>
-            <Home />
+            <Home scrollPercentage={scrollPercentage}/>
             <About opacity={scrollPercentage > 10 ? 1 : 0} />
             <Media opacity={scrollPercentage > 35 ? 1 : 0} />
             <Services opacity={scrollPercentage > 45 ? 1 : 0} />
